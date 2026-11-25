@@ -1,3 +1,4 @@
+import ResumeLink from "@/components/ResumeLink";
 import { contact, profile } from "@/data/portfolio";
 
 export default function Contact() {
@@ -25,17 +26,14 @@ export default function Contact() {
         <div className="mt-8 flex flex-wrap gap-3">
           <a
             href={`mailto:${profile.email}`}
+            data-track="contact-email"
             className="hero-cta-primary inline-flex items-center rounded-full px-5 py-2.5 text-sm font-medium text-foreground"
           >
             Get in Touch
           </a>
-          <a
-            href={profile.resumeHref}
-            download
-            className="inline-flex items-center rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground/90 transition-colors hover:border-foreground/30 hover:bg-white/[0.03]"
-          >
+          <ResumeLink className="inline-flex items-center rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground/90 transition-colors hover:border-foreground/30 hover:bg-white/[0.03]">
             View Resume (PDF)
-          </a>
+          </ResumeLink>
         </div>
 
         <dl className="mt-12 grid gap-6 sm:grid-cols-3">
@@ -46,6 +44,7 @@ export default function Contact() {
             <dd className="mt-2">
               <a
                 href={`mailto:${profile.email}`}
+                data-track="contact-email"
                 className="text-sm text-foreground transition-colors hover:text-accent"
               >
                 {profile.email}
@@ -69,6 +68,7 @@ export default function Contact() {
                 href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-track="outbound-linkedin"
                 className="text-foreground transition-colors hover:text-accent"
               >
                 LinkedIn ↗
@@ -77,6 +77,7 @@ export default function Contact() {
                 href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-track="outbound-github"
                 className="text-foreground transition-colors hover:text-accent"
               >
                 GitHub ↗

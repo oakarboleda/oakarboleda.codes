@@ -1,4 +1,5 @@
-import { experience, profile } from "@/data/portfolio";
+import ResumeLink from "@/components/ResumeLink";
+import { experience } from "@/data/portfolio";
 
 export default function Experience() {
   return (
@@ -69,13 +70,9 @@ export default function Experience() {
             Download the full PDF for comprehensive role details, education, and
             credentials.
           </p>
-          <a
-            href={profile.resumeHref}
-            download
-            className="hero-cta-primary mt-5 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-foreground"
-          >
+          <ResumeLink className="hero-cta-primary mt-5 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-foreground">
             Download Full Resume (PDF)
-          </a>
+          </ResumeLink>
         </div>
       </div>
     </section>

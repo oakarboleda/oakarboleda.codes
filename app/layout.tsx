@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Geist_Mono, Outfit } from "next/font/google";
+import Analytics from "@/components/Analytics";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -29,7 +30,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${outfit.variable} ${fraunces.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

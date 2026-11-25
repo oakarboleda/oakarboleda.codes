@@ -13,6 +13,9 @@ Options -Indexes
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
+
+  # Company attribution URLs: /r/acme → index.html (URL stays /r/acme)
+  RewriteRule ^r/([a-zA-Z0-9_-]+)/?$ /index.html [L]
 </IfModule>
 
 # Cache static assets from Next export

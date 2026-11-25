@@ -1,3 +1,4 @@
+import ResumeLink from "@/components/ResumeLink";
 import { profile } from "@/data/portfolio";
 
 const NAME = "Oak.";
@@ -81,13 +82,9 @@ export default function Hero() {
             View Selected Work
             <ArrowIcon />
           </a>
-          <a
-            href={profile.resumeHref}
-            download
-            className="inline-flex items-center rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground/90 transition-colors hover:border-foreground/30 hover:bg-white/[0.03]"
-          >
+          <ResumeLink className="inline-flex items-center rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground/90 transition-colors hover:border-foreground/30 hover:bg-white/[0.03]">
             View Resume (PDF)
-          </a>
+          </ResumeLink>
         </div>
       </div>
     </section>
