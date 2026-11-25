@@ -1,9 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  // Static HTML export for Hostinger shared hosting (FTP upload of ./out).
+  // cacheComponents / PPR are incompatible with export mode, so they stay off.
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
+  trailingSlash: true,
   turbopack: {
     rules: {
       "*.css": {
