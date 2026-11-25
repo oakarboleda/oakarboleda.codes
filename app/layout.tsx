@@ -18,9 +18,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Oak — Full Stack Developer & UI Designer",
+  title: "Oak Deden-Arboleda — Senior Full-Stack Software Engineer",
   description:
-    "I build beautiful, scalable digital products that users love and engineers respect.",
+    "Senior Full-Stack Software Engineer in Minneapolis. 10+ years building scalable web and mobile products across media, healthcare, and e-commerce.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

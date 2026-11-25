@@ -189,17 +189,20 @@ body {
 
 .hero-name {
   position: relative;
-  display: inline-block;
+  display: block;
   margin: 0;
+  padding: 0;
+  border: 0;
   font-family: var(--font-fraunces), ui-serif, Georgia, serif;
   font-weight: 600;
-  color: #c4b5fd;
   font-size: clamp(4.5rem, 16vw, 9.5rem);
   line-height: 0.95;
   letter-spacing: -0.03em;
+  height: 0.95em;
+  overflow: visible;
 }
 
-.hero-name__dim {
+.hero-name--dim {
   color: #2a2438;
   user-select: none;
 }

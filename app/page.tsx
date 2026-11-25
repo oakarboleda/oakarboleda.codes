@@ -1,5 +1,12 @@
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
+import HowIWork from "@/components/HowIWork";
+import SelectedWork from "@/components/SelectedWork";
 import SiteNav from "@/components/SiteNav";
+import Skills from "@/components/Skills";
+import StatsBar from "@/components/StatsBar";
 
 export default function Home() {
   return (
@@ -7,37 +14,13 @@ export default function Home() {
       <SiteNav />
       <main className="flex-1">
         <Hero />
-
-        <section
-          id="about"
-          className="mx-auto max-w-4xl px-5 py-28 sm:px-8"
-          aria-labelledby="about-heading"
-        >
-          <p className="text-xs font-semibold tracking-[0.2em] text-accent">
-            ABOUT ME
-          </p>
-          <h2
-            id="about-heading"
-            className="mt-4 font-serif text-4xl font-medium tracking-tight text-foreground sm:text-5xl md:text-6xl"
-          >
-            Engineering{" "}
-            <span className="about-accent italic">better</span> experiences
-          </h2>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted">
-            More about Oak coming soon — skills, projects, and the work behind
-            the craft.
-          </p>
-        </section>
-
-        <section id="skills" className="min-h-[40vh]" aria-label="Skills" />
-        <section id="projects" className="min-h-[40vh]" aria-label="Projects" />
-        <section
-          id="experience"
-          className="min-h-[40vh]"
-          aria-label="Experience"
-        />
-        <section id="contact" className="min-h-[40vh]" aria-label="Contact" />
-        <div id="resume" className="sr-only" aria-hidden />
+        <StatsBar />
+        <SelectedWork />
+        <Experience />
+        <HowIWork />
+        <Skills />
+        <About />
+        <Contact />
       </main>
     </>
   );
