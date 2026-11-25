@@ -47,6 +47,27 @@ jobs:
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
+      - name: Check FTP secrets
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          missing=0
+          for name in FTP_SERVER FTP_USERNAME FTP_PASSWORD; do
+            if [ -z "${!name}" ]; then
+              echo "::error::Missing repository secret: $name"
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then
+            echo "Add FTP_SERVER, FTP_USERNAME, and FTP_PASSWORD under:"
+            echo "Settings → Secrets and variables → Actions"
+            echo "(Same names as your local .env — do not commit .env)"
+            exit 1
+          fi
+          echo "FTP secrets are present."
+
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
